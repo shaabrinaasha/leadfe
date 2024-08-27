@@ -9,7 +9,8 @@ export default function textfield({
   value,
   icon,
   disabled,
-  mandatory
+  mandatory,
+  type='text',
 }) {
   return (
     <div className="mb-4 mx-1 w-full ">
@@ -20,7 +21,7 @@ export default function textfield({
         <input
           className=" border border-slate-300 focus:border-sky-500 focus:border-[1px] rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline text-[12px] "
           id={id}
-          type="text"
+          type={type}
           placeholder={placeholder}
           onChange={onChange}
           value={value}

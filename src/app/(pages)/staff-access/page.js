@@ -25,8 +25,7 @@ export default function page(props) {
   const userID = props.searchParams?.userID;
   const userRole = props.searchParams?.userRole;
   return (
-    <PageLayout title="Staff Access">
-      
+    <PageLayout title="Staff Access"> 
       <div>
         <Link href="/staff-access/?showCreate=true">
           <CreateButton width={"w-[140px] "} type={"button"}>

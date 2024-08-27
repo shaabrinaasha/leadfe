@@ -5,7 +5,7 @@ import { IoMdClose } from "react-icons/io";
 export default function modalBase({ children, title, subtitle, closePath }) {
   return (
     <div className="fixed inset-0 bg-slate-800 bg-opacity-50 overflow-y-auto h-full w-full flex items-center justify-center">
-      <div className="p-8 border w-96 shadow-lg rounded-md bg-white">
+      <div className="p-8 border shadow-lg rounded-md bg-white ">
         <Link
           href={closePath}
           className="w-full flex justify-end hover:text-red-600"

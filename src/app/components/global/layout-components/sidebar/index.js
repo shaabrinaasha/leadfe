@@ -60,7 +60,7 @@ const menulist = [
   {
     title: "Budget",
     id: "budget",
-    path: "/",
+    path: "/budget",
     icon: <MdSavings />,
     role: "superadmin",
   },
