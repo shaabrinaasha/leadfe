@@ -5,7 +5,7 @@ import Textfield from "@/app/components/global/textfield";
 import Selectfield from "@/app/components/global/selectfield";
 import Datepicker from "@/app/components/global/datepicker";
 import Searchfield from "@/app/components/global/searchfield";
-import SubmitButton from "@/app/components/global/submit-button"
+import SubmitButton from "@/app/components/global/blue-button"
 
 const selectSample = [
   { value: "1", title: "Option 1" },
@@ -18,7 +18,7 @@ const selectSample = [
 export default function sample() {
   return (
     <PageLayout title={"Sample"}>
-      <div className="overflow-y-auto">
+      <div className="">
         <div className="bg-white drop-shadow-lg rounded-lg mb-5">
           <div className="p-5">
             <h1 className="text-[18px] text-sky-950 font-bold">H1 Example</h1>
@@ -37,7 +37,7 @@ export default function sample() {
             </p>
           </div>
         </div>
-        <div className="bg-white drop-shadow-lg rounded-lg mb-5">
+        <div className="bg-white drop-shadow-lg rounded-lg mb-5 ">
           <div className="p-5">
             <h1 className="text-[18px] text-sky-950 font-bold">Form Example</h1>
             <h2 className="text-[15px]  font-semibold">Sub-Content</h2>
@@ -48,18 +48,21 @@ export default function sample() {
                   label={"Textfield"}
                   placeholder={"input your text here..."}
                   onChange={""}
+                  mandatory={true}
                 />
 
                 <Selectfield
                   id="sample-select"
                   label={"Select an Option"}
                   name={"Selectfield"}
-                  header={"Select"}
+                  placeholder={"Select"}
+                  defaultValue={"header"}
                   onChange={""}
                   selectData={selectSample}
+                  mandatory={true}
                 />
 
-                <Datepicker bigLabel={"Date"} label={"Small Label"} onChange={''} />
+                <Datepicker bigLabel={"Date"} label={"Small Label"} onChange={''} mandatory={true}/>
               </div>
               <div className="grid grid-cols-3 items-center justify-center">
                 <Searchfield

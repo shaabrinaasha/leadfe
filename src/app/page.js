@@ -1,12 +1,9 @@
 import Image from "next/image";
 // import Sidebar from "./components/global/sidebar";
-import ContentLayout from "./components/global/layout-components/content-layout";
-import Wrapper from "./components/global/layout-components/wrapper";
-import Header from "./components/global/layout-components/header";
-import TitleBar from "./components/global/layout-components/title-bar";
-import Emailfield from "./components/pages/login/emailfield";
+import Emailfield from "./components/global/emailfield";
 // import Passwordfield from "./components/pages/login/passwordfield";
-import SubmitButton from "./components/global/submit-button";
+import SubmitButton from "./components/global/blue-button";
+
 import dynamic from "next/dynamic";
 
 const Passwordfield = dynamic(

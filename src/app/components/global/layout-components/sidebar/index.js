@@ -67,21 +67,20 @@ const menulist = [
   {
     title: "Staff Access",
     id: "staff-access",
-    path: "/",
+    path: "/staff-access",
     icon: <MdGroup />,
     role: "superadmin",
   },
 ];
 export default function sidebar() {
   const pathname = usePathname();
-
   return (
-    <div className="md:w-60  h-screen flex-1 fixed hidden md:flex text-white">
+    <div className="md:w-60 h-screen flex-1 fixed hidden md:flex text-white">
       <div>
         <div className="py-10">
           <Link
             href="/"
-            className="flex flex-row items-center justify-center p-5   h-12 w-full"
+            className="flex flex-row items-center justify-center p-5 h-12 w-full"
           >
             <Image src="/logo-lead.png" width={500} height={500} alt="Logo" />
           </Link>
@@ -95,7 +94,7 @@ export default function sidebar() {
                 href={item.path}
                 // onClick={()=>setSelected(item.title)}
                 className={
-                  "w-52 p-3 pl-8 my-2 rounded-r-lg flex items-center justify-start " +
+                  "w-52 p-3 pl-8 my-2 rounded-r-lg flex items-center justify-start hover:bg-sky-600 " +
                   (pathname.includes(item.id) ? "bg-sky-600" : " ")
                 }
               >

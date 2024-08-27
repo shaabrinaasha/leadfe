@@ -5,6 +5,10 @@ import Header from "../header";
 import TitleBar from "../title-bar";
 import dynamic from "next/dynamic";
 
+// const TitleBar = dynamic(() => import("../title-bar"), {
+//   ssr: false,
+// });
+
 const Sidebar = dynamic(() => import("../sidebar"), {
     ssr: false,
   });
