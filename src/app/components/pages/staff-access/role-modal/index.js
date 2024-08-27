@@ -39,7 +39,7 @@ export default function changeRoleModal({userID, userRole}) {
         "Change " + userID + "'s Role"
       }
     >
-      <form>
+      <form className="md:w-[300px]">
         <Selectfield
           label={"Role"}
           id={"role"}
