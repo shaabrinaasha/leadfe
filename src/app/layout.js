@@ -1,5 +1,7 @@
 import { Montserrat } from "next/font/google";
 import "./globals.css";
+import { StyledEngineProvider } from '@mui/material/styles';
+
 
 const montserrat = Montserrat({ subsets: ["latin"],display: 'swap', });
 

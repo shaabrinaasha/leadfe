@@ -1,0 +1,11 @@
+.MuiChartsAxis-directionY .MuiChartsAxis-label {
+  transform: translateX(-14px) !important;
+  
+}
+
+.MuiChartsAxis-directionY {
+  transform: translateX(53px) !important;
+}
+
+
+
