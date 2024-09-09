@@ -147,3 +147,127 @@ export const sourceTypeData = [
     value: "business_partner",
   },
 ];
+
+export const sourceDummy = [
+  {
+    label: "Richard",
+    value: "SC001",
+  },
+  {
+    label: "Raygun",
+    value: "SC002",
+  },
+  {
+    label: "John Doe",
+    value: "SC003",
+  },
+  {
+    label: "Bilbo",
+    value: "SC004",
+  },
+  {
+    label: "Bilbo",
+    value: "SC005",
+  },
+  {
+    label: "Bilbo",
+    value: "SC006",
+  },
+  {
+    label: "Bilbo",
+    value: "SC007",
+  },
+];
+
+export const companyDummy = [
+  {
+    label: "PT. Wijaya Karya (Persero)",
+    value: "CP001",
+  },
+  {
+    label: "PT. Wijaya Karya Beton Tbk.",
+    value: "CP002",
+  },
+  {
+    label: "PT. Whitesky Aviation",
+    value: "CP003",
+  },
+  {
+    label: "PT. Whitesky Aviation",
+    value: "CP003",
+  },
+  {
+    label: "PT. Whitesky Aviation",
+    value: "CP003",
+  },
+  {
+    label: "PT. Whitesky Aviation",
+    value: "CP003",
+  },
+  {
+    label: "PT. Whitesky Aviation",
+    value: "CP003",
+  },
+];
+
+export const insuredTypeData = [
+  {
+    label: "Holding",
+    value: "holding",
+  },
+  {
+    label: "Subsidiary",
+    value: "subsidiary",
+  },
+  {
+    label: "Standalone",
+    value: "standalone",
+  },
+];
+
+export const picDummy = [
+  {
+    label: "Richard",
+    value: "PC001",
+  },
+  {
+    label: "Raygun",
+    value: "PC002",
+  },
+  {
+    label: "John Doe",
+    value: "PC003",
+  },
+  {
+    label: "Bilbo",
+    value: "PC004",
+  },
+  {
+    label: "Bilbo",
+    value: "PC005",
+  },
+  {
+    label: "Bilbo",
+    value: "PC006",
+  },
+  {
+    label: "Bilbo",
+    value: "PC007",
+  },
+];
+
+export const currencyData = [
+  {
+    label: "IDR",
+    value: "idr",
+  },
+  {
+    label: "USD",
+    value: "usd",
+  },
+
+  {
+    label: "EUR",
+    value: "eur",
+  },
+];

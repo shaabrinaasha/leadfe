@@ -50,7 +50,7 @@ export default function selectfield({
         onChange={onChange}
         defaultValue={defaultValue}
         //id="countries"
-        className=" border border-slate-300 focus:border-sky-500 focus:border-[1px] rounded-md w-full py-[7px] px-3  leading-tight focus:outline-none  text-[12px] focus:text-black"
+        className=" border border-slate-300 h-[38px] focus:border-sky-500 focus:border-[1px] rounded-md w-full py-[7px] px-3  leading-tight focus:outline-none  text-[12px] focus:text-black"
       >
         <option disabled value={"header"} className="text-gray-300">
           {placeholder}

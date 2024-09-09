@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import AccountInformationForm from "@/app/components/pages/sales-pipeline/form/account-information";
 import SourceInformationForm from "@/app/components/pages/sales-pipeline/form/source-information";
+import InsuredInformationForm from "@/app/components/pages/sales-pipeline/form/insured-information";
+import SalesEstimationForm from "@/app/components/pages/sales-pipeline/form/sales-estimation";
 
 import SubmitButton from "@/app/components/global/blue-button";
 import dayjs from "dayjs";
@@ -12,7 +14,7 @@ export default function createSalesForm({}) {
     created_by: "US001",
     /////
     sales_status: "pending", //win, lost , pending(default)
-    progress : "0", // sales pipeline progress, default 0
+    progress: "0", // sales pipeline progress, default 0
     /////
     account_owner: "",
     business_unit: "",
@@ -24,43 +26,48 @@ export default function createSalesForm({}) {
 
   const [sourceInfo, setSourceInfo] = useState({
     source_id: null,
-    status: "new",//if existing then select source and autofill source_id,
+    status: "new", //if existing then select source and autofill source_id,
     type: null,
     name: null,
     email: null,
     mobile: null,
-    agreement_no: null, 
+    agreement_no: null,
     role: "aviation", //get user role from jwt
-    created_by: "US001"//get user position from jwt
+    created_by: "US001", //get user position from jwt
   });
 
-  const [companyInfo, setCompanyInfo] = useState({
-    company_id: null,
-    name: null,
-    address: null,
-    phone: null,
-    status: null, //insured/not_insured
-  });
+  // const [companyInfo, setCompanyInfo] = useState({
+  //   company_id: null,
+  //   name: null,
+  //   address: null,
+  //   phone: null,
+  //   status: null, //insured/not_insured
+  // });
 
   const [insuredInfo, setInsuredInfo] = useState({
     insured_id: null,
     company_id: null,
     type: null, //holding/subsidiary/standalone
     holding_id: null,
+    subsidiary_id: null,
+    name: null,
+    address: null,
+    phone: null,
+    status: null, //insured/not_insured
   });
 
   const [picInfo, setPICInfo] = useState({
     pic_id: null,
-    status: "new",//if existing then select pic
+    status: "new", //if existing then select pic
     name: null,
     email: null,
     mobile: null,
     role: "aviation", //get user role from jwt
-    created_by: "US001"//get user position from jwt
+    created_by: "US001", //get user position from jwt
   });
 
   const [salesEst, setSalesEst] = useState({
-    inception_date: null,//if existing then select source and autofill source_id
+    inception_date: null, //if existing then select source and autofill source_id
     premium_currency: null,
     premium_amount: null,
     brokerage_currency: null,
@@ -71,29 +78,66 @@ export default function createSalesForm({}) {
     source_amount: null,
   });
 
+  const handleDateChange = (e,field, obj, func) => {
+    const dateformat = dayjs(e.$d).format("YYYY-MM-DD");
+    func({ ...obj, [field]: dateformat });
+  };
 
-  const handleSelectChange = (e,obj,func) => {
-    const selectValue = e.target.value;
+  const handleFieldChange = (e, obj, func) => {
     func({ ...obj, [e.target.id]: e.target.value });
   };
 
-  const handleFieldChange = (e,obj,func) => {
-    func({ ...obj, [e.target.id]: e.target.value });
+  const handleSearchSelect = (e, field, obj, func) => {
+    func({ ...obj, [field]: e.value });
   };
 
   const handleSubmit = (e) => {
-    const isEmpty = Object.values(accountInfo).some(x => x == '');
-    if (isEmpty==true) {
-        alert("Some fields in the account information is empty, please fill the mandatory fields!");
+    const isEmpty = Object.values(accountInfo).some((x) => x == "");
+    if (isEmpty == true) {
+      alert(
+        "Some fields in the account information is empty, please fill the mandatory fields!"
+      );
     }
   };
 
   return (
     <div>
-      <form onSubmit={()=> handleSubmit()}>
-        <AccountInformationForm accountInfo={accountInfo} setAccountInfo={setAccountInfo} handleFieldChange={handleFieldChange} ></AccountInformationForm>
-        <SourceInformationForm sourceStatus={sourceInfo.status} sourceInfo={sourceInfo} setSourceInfo={setSourceInfo} handleFieldChange={handleFieldChange} ></SourceInformationForm>
-        <SubmitButton type={"submit"} width={"w-20"}>Submit</SubmitButton>
+      <form onSubmit={() => handleSubmit()}>
+        <AccountInformationForm
+          accountInfo={accountInfo}
+          setAccountInfo={setAccountInfo}
+          handleFieldChange={handleFieldChange}
+          handleSearchSelect={handleSearchSelect}
+        />
+        <SourceInformationForm
+          sourceStatus={sourceInfo.status}
+          sourceInfo={sourceInfo}
+          setSourceInfo={setSourceInfo}
+          handleFieldChange={handleFieldChange}
+          handleSearchSelect={handleSearchSelect}
+        />
+
+        <InsuredInformationForm
+          accountStatus={accountInfo.account_status}
+          /////
+          picInfo={picInfo}
+          setPICInfo={setPICInfo}
+          /////
+          insuredInfo={insuredInfo}
+          setInsuredInfo={setInsuredInfo}
+          /////
+          handleFieldChange={handleFieldChange}
+          handleSearchSelect={handleSearchSelect}
+        />
+        <SalesEstimationForm
+          salesEst={salesEst}
+          setSalesEst={setSalesEst}
+          handleFieldChange={handleFieldChange}
+          handleDateChange={handleDateChange}
+        />
+        <SubmitButton type={"submit"} width={"w-20"}>
+          Submit
+        </SubmitButton>
       </form>
     </div>
   );

@@ -3,13 +3,14 @@ import Section from "@/app/components/global/section";
 import Selectfield from "@/app/components/global/selectfield";
 import Textfield from "@/app/components/global/textfield";
 import SearchableSelect from "@/app/components/global/searchable-select";
-import { sourceTypeData, formStatusData } from "@/app/utils/dummy";
+import { sourceTypeData, formStatusData, sourceDummy } from "@/app/utils/dummy";
 
 export default function sourceInformationForm({
   sourceInfo,
   setSourceInfo,
   handleFieldChange,
   sourceStatus,
+  handleSearchSelect,
 }) {
   const newSourceForm = () => {
     return (
@@ -67,57 +68,28 @@ export default function sourceInformationForm({
     );
   };
 
-  const sampleOptions = [
-    {
-      label: "Richard",
-      value: "US001",
-    },
-    {
-      label: "Raygun",
-      value: "US002",
-    },
-    {
-      label: "John Doe",
-      value: "US003",
-    },
-    {
-      label: "Bilbo",
-      value: "US004",
-    },
-  ];
-
   const existingSourceForm = () => {
     return (
       <div className="grid md:grid-cols-3 lg:grid-cols-4 px-2 gap-3 mt-7">
-        {/* <Selectfield
-          id={"source_id"}
+        <SearchableSelect
           name={"source_id"}
-          placeholder={"Select Existing Source"}
-          label={"Source Source"}
-          defaultValue={"header"}
-          onChange={(e) => handleFieldChange(e, sourceInfo, setSourceInfo)}
+          placeholder={"Select Existing Source.."}
+          label={"Select Source"}
           mandatory={true}
-          selectData={sourceTypeData}
-        /> */}
-        <SearchableSelect options={sampleOptions} ></SearchableSelect>
+          onChange={(e) =>
+            handleSearchSelect(e, "source_id", sourceInfo, setSourceInfo)
+          }
+          options={sourceDummy}
+          useTooltip={true}
+          tootltipText={"Search and select existing source"}
+        />
       </div>
     );
   };
   console.log(sourceInfo);
 
-  // const [sourceInfo, setSourceInfo] = useState({
-  //   source_id: null,
-  //   status: "new",//if existing then select source and autofill source_id,
-  //   type: null,
-  //   name: null,
-  //   email: null,
-  //   mobile: null,
-  //   agreement_no: null,
-  //   role: "aviation", //get user role from jwt
-  //   created_by: "US001"//get user position from jwt
-  // });
   return (
-    <div>
+    <div className="my-5">
       <Section title={"Source Information"}>
         <div className="grid md:grid-cols-3 lg:grid-cols-4 px-2 gap-3 mb-3">
           <Selectfield
@@ -135,8 +107,8 @@ export default function sourceInformationForm({
             }
           />
         </div>
-        {/* {sourceStatus == "new" && newSourceForm()} */}
-        {sourceStatus == "new" && existingSourceForm()}
+        {sourceStatus == "new" && newSourceForm()}
+        {sourceStatus == "existing" && existingSourceForm()}
       </Section>
     </div>
   );

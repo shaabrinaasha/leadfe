@@ -2,22 +2,25 @@ import React from "react";
 import Section from "@/app/components/global/section";
 import Selectfield from "@/app/components/global/selectfield";
 import Textfield from "@/app/components/global/textfield";
+import SearchableSelect from "@/app/components/global/searchable-select";
 import {
   accountOwnerDummy,
   businessUnitData,
   accountTypeData,
   newAccountStatusData,
   renewalAccountStatusData,
+  companyDummy
 } from "@/app/utils/dummy";
 
 export default function accountInformationForm({
   accountInfo,
   setAccountInfo,
   handleFieldChange,
+  handleSearchSelect,
 }) {
-  console.log(accountInfo);
+  // console.log(accountInfo);
   return (
-    <div>
+    <div className="my-5">
       <Section title={"Account Information"}>
         <div className="grid md:grid-cols-3 lg:grid-cols-4 px-2 gap-3">
           <Selectfield
@@ -84,24 +87,20 @@ export default function accountInformationForm({
                 : newAccountStatusData
             }
           />
-          {accountInfo.account_status == "affiliated" &&
-            <Selectfield
-              id={"existing_account"}
+          {accountInfo.account_status == "affiliated" && (
+            <SearchableSelect
               name={"existing_account"}
               placeholder={"Select Existing Account"}
               label={"Existing Account"}
-              defaultValue={"header"}
-              onChange={(e) =>
-                handleFieldChange(e, accountInfo, setAccountInfo)
-              }
               mandatory={true}
-              selectData={accountTypeData}
-              useTooltip={true}
-              tootltipText={
-                "Select company account that is affiliated with this account"
+              onChange={(e) =>
+                handleSearchSelect(e, "existing_account", accountInfo, setAccountInfo)
               }
+              options={companyDummy}
+              useTooltip={true}
+              tootltipText={"Select company account that is affiliated with this account"}
             />
-          }
+          )}
         </div>
       </Section>
     </div>

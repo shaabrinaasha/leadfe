@@ -32,7 +32,7 @@ export default function textfield({
           }
         >
           <div>
-            <IoInformationCircle className="text-[17px] text-sky-800 hover:text-sky-600" />
+            <IoInformationCircle className="text-[17px]  text-sky-800 hover:text-sky-600" />
           </div>
         </Tooltip>
       </div>
@@ -49,7 +49,7 @@ export default function textfield({
       </label>
       <div className="w-full flex justify-end items-center relative">
         <input
-          className=" border border-slate-300 focus:border-sky-500 focus:border-[1px] rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline text-[12px] "
+          className=" border border-slate-300 h-[38px] focus:border-sky-500 focus:border-[1px] rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline text-[12px] "
           id={id}
           type={type}
           placeholder={placeholder}
