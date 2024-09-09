@@ -1,8 +1,26 @@
 "use client";
-import React, { useState } from "react";
+import dynamic from "next/dynamic";
+import React from "react";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+// import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+// import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+
+// const AdapterDayjs = dynamic(() =>
+//   import("@mui/x-date-pickers/AdapterDayjs")
+// );
+
+const LocalizationProvider = dynamic(() =>
+  import("@mui/x-date-pickers/LocalizationProvider").then(
+    (mod) => mod.LocalizationProvider
+  ),
+);
+
+const DatePicker = dynamic(() =>
+  import("@mui/x-date-pickers/DatePicker").then(
+    (mod) => mod.DatePicker
+  ),
+);
+
 
 
 export default function datePickerMUI({

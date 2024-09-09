@@ -1,15 +1,23 @@
+
 import React from "react";
 import PageLayout from "@/app/components/global/layout-components/page-layout";
-import {
-  DashboardFilter,
-  ClosedSales,
-  ActiveSales,
-  MonthlyTotal,
-  YearToDateTotal,
-  YearToDateTrend,
-  TopSales
-} from "@/app/components/pages/dashboard/component-imports";
-import budget from "../budget/page";
+// import {
+//   // DashboardFilter,
+//   // ClosedSales,
+//   ActiveSales,
+//   // MonthlyTotal,
+//   // YearToDateTotal,
+//   // YearToDateTrend,
+//   // TopSales
+// } from "@/app/components/pages/dashboard/component-imports";
+import DashboardFilter from "@/app/components/pages/dashboard/filter-dropdown";
+import ClosedSales from "@/app/components/pages/dashboard/closed-sales";
+import ActiveSales from "@/app/components/pages/dashboard/active-sales";
+import MonthlyTotal from "@/app/components/pages/dashboard/monthly-total";
+import YearToDateTotal from "@/app/components/pages/dashboard/ytd-total";
+import YearToDateTrend from "@/app/components/pages/dashboard/ytd-trend";
+import TopSales from "@/app/components/pages/dashboard/top-sales";
+
 
 const sampleData = {
   closedSales: {

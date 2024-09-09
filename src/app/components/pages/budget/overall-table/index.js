@@ -1,21 +1,42 @@
 "use client";
 import React, { useState } from "react";
 import { FaSort, FaSortUp, FaSortDown } from "react-icons/fa6";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
+// import Table from "@mui/material/Table";
+// import TableBody from "@mui/material/TableBody";
+// import TableCell from "@mui/material/TableCell";
+// import TableContainer from "@mui/material/TableContainer";
+// import TableHead from "@mui/material/TableHead";
+// import TableRow from "@mui/material/TableRow";
 import RoleButton from "@/app/components/global/blue-button";
 import DeleteButton from "@/app/components/global/red-button";
 import { MdBorderColor } from "react-icons/md";
 
-import TableRow from "@mui/material/TableRow";
+const Table = dynamic(() =>
+  import("@mui/material/Table")
+);
+
+const TableBody = dynamic(() =>
+  import("@mui/material/TableBody")
+);
+
+const TableCell = dynamic(() =>
+  import("@mui/material/TableCell")
+);
+const TableContainer = dynamic(() =>
+  import("@mui/material/TableContainer")
+);
+const TableHead = dynamic(() =>
+  import("@mui/material/TableHead")
+);
+const TableRow = dynamic(() =>
+  import("@mui/material/TableRow")
+);
+
 import Link from "next/link";
+import dynamic from "next/dynamic";
 
-
-function createData(year, aviation, construction, employee, other,total) {
-  return { year, aviation, construction, employee, other,total };
+function createData(year, aviation, construction, employee, other, total) {
+  return { year, aviation, construction, employee, other, total };
 }
 
 const rows = [
@@ -25,7 +46,7 @@ const rows = [
     "120.000.000",
     "130.000.000",
     "140.000.000",
-    "490.000.000",
+    "490.000.000"
   ),
   createData(
     "2025",
@@ -33,7 +54,7 @@ const rows = [
     "220.000.000",
     "330.000.000",
     "240.000.000",
-    "990.000.000",
+    "990.000.000"
   ),
   createData(
     "2026",
@@ -41,7 +62,7 @@ const rows = [
     "320.000.000",
     "100.000.000",
     "340.000.000",
-    "1.060.000.000",
+    "1.060.000.000"
   ),
 ];
 
@@ -54,7 +75,6 @@ const tableHeader = [
   { title: "Total", id: "total" },
   { title: "Action", id: false },
 ];
-
 
 export default function overallBudgetTable() {
   const [sortQuery, setSortQuery] = useState("");
@@ -130,8 +150,10 @@ export default function overallBudgetTable() {
               <TableCell align="left">IDR {row.total}</TableCell>
               <TableCell align="left">
                 <div className="flex">
-                  <Link href={"/budget/?showEditBudget=true&budgetYear="+row.year}>
-                  <MdBorderColor className="text-yellow-500 hover:text-amber-600 text-[18px]" />
+                  <Link
+                    href={"/budget/?showEditBudget=true&budgetYear=" + row.year}
+                  >
+                    <MdBorderColor className="text-yellow-500 hover:text-amber-600 text-[18px]" />
                   </Link>
                 </div>
               </TableCell>

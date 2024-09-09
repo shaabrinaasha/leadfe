@@ -1,17 +1,37 @@
 "use client";
 import React, { useState } from "react";
 import { FaSort, FaSortUp, FaSortDown } from "react-icons/fa6";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import RoleButton from "@/app/components/global/blue-button";
-import DeleteButton from "@/app/components/global/red-button";
-import { MdBorderColor } from "react-icons/md";
+// import Table from "@mui/material/Table";
+// import TableBody from "@mui/material/TableBody";
+// import TableCell from "@mui/material/TableCell";
+// import TableContainer from "@mui/material/TableContainer";
+// import TableHead from "@mui/material/TableHead";
 
-import TableRow from "@mui/material/TableRow";
+
+// import TableRow from "@mui/material/TableRow";
+
+const Table = dynamic(() =>
+  import("@mui/material/Table")
+);
+
+const TableBody = dynamic(() =>
+  import("@mui/material/TableBody")
+);
+
+const TableCell = dynamic(() =>
+  import("@mui/material/TableCell")
+);
+const TableContainer = dynamic(() =>
+  import("@mui/material/TableContainer")
+);
+const TableHead = dynamic(() =>
+  import("@mui/material/TableHead")
+);
+const TableRow = dynamic(() =>
+  import("@mui/material/TableRow")
+);
 import Link from "next/link";
+import dynamic from "next/dynamic";
 
 function createData(year, userID, name, amount) {
   return { year, userID, name, amount };

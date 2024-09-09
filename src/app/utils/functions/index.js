@@ -41,3 +41,14 @@ export const calcPercentage = (amount, param) => {
 //   console.log(string);
     return string
 };
+
+const COUNT_ABBRS = [ '', 'K', 'M', 'B', 'T' ];
+
+export function formatCount(count, withAbbr = true, decimals = 2) {
+    const i     = 0 === count ? count : Math.floor(Math.log(count) / Math.log(1000));
+    let result  = parseFloat((count / Math.pow(1000, i)).toFixed(decimals));
+    if(withAbbr) {
+        result += `${COUNT_ABBRS[i]}`; 
+    }
+    return result;
+}

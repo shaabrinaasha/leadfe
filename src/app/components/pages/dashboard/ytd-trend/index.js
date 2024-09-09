@@ -1,12 +1,29 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import {  abbrNum } from "@/app/utils/functions";
-import { ChartsReferenceLine } from "@mui/x-charts/ChartsReferenceLine";
+// import {  formatCount } from "@/app/utils/functions";
 
-import { BarChart } from "@mui/x-charts/BarChart";
+import dynamic from "next/dynamic";
+
+const formatCount = dynamic(
+  () => import("@/app/utils/functions").then(
+    (mod) => mod.formatCount)
+);
+
+
+const BarChart = dynamic(
+  () => import("@mui/x-charts/BarChart").then(
+    (mod) => mod.BarChart)
+);
+
+const ChartsReferenceLine = dynamic(
+  () => import("@mui/x-charts/ChartsReferenceLine").then(
+    (mod) => mod.ChartsReferenceLine),
+);
+
+
 // import "@/app/utils/style/style.css";
 
-export default function yearToDateTotal({ data, budget }) {
+export default function yearToDateTrend({ data, budget }) {
   const [brokerage, setBrokerage] = useState([0]);
   const [consultation, setConsultation] = useState([0]);
   const [xLabels, setXLabels] = useState([""]);
@@ -58,7 +75,7 @@ export default function yearToDateTotal({ data, budget }) {
                 id: "brokerageId",
                 stack: "total",
                 color: "rgb(192 38 211)",
-                valueFormatter: (value) => `IDR ${abbrNum(value, 2)}`,
+                valueFormatter: (value) => `IDR ${formatCount(value)}`,
               },
               {
                 data: consultation,
@@ -66,7 +83,7 @@ export default function yearToDateTotal({ data, budget }) {
                 id: "consultationId",
                 stack: "total",
                 color: "rgb(245 158 11)",
-                valueFormatter: (value) => `IDR ${abbrNum(value, 2)}`,
+                valueFormatter: (value) => `IDR ${formatCount(value)}`,
               },
             ]}
             xAxis={[
@@ -80,13 +97,13 @@ export default function yearToDateTotal({ data, budget }) {
             ]}
             yAxis={[
               {
-                valueFormatter: (value) => `${abbrNum(value, 2)}`,
+                valueFormatter: (value) => `${formatCount(value)}`,
               },
             ]}
           >
             <ChartsReferenceLine
               y={parseInt(budget)}
-              label={ `Budget IDR ${abbrNum(budget, 2)}`}
+              label={ `Budget IDR ${formatCount(budget)}`}
               labelAlign="end"
               lineStyle={{ strokeDasharray: "5 5", strokeWidth: "2", strokeOpacity: "50%" }}
             />

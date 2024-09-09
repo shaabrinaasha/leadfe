@@ -4,19 +4,19 @@ import CreateButton from "@/app/components/global/blue-button";
 import CreateUserModal from "@/app/components/pages/staff-access/create-modal";
 import ChangeRoleModal from "@/app/components/pages/staff-access/role-modal";
 import DeleteUserModal from "@/app/components/pages/staff-access/delete-modal";
-// import Table from "@/app/components/pages/staff-access/table"
+import Table from "@/app/components/pages/staff-access/table"
 import { MdAdd } from "react-icons/md";
 
 import dynamic from "next/dynamic";
 import Link from "next/link";
 
-const Table = dynamic(
-  () => import("@/app/components/pages/staff-access/table"),
-  {
-    ssr: false,
-    loading: () => <p>Loading...</p>,
-  }
-);
+// const Table = dynamic(
+//   () => import("@/app/components/pages/staff-access/table"),
+//   {
+//     ssr: false,
+//     loading: () => <p>Loading...</p>,
+//   }
+// );
 
 export default function page(props) {
   const showCreate = props.searchParams?.showCreate;

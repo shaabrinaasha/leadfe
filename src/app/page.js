@@ -8,9 +8,7 @@ import dynamic from "next/dynamic";
 
 const Passwordfield = dynamic(
   () => import("./components/pages/login/passwordfield"),
-  {
-    ssr: false,
-  }
+  
 );
 
 export default function Login() {

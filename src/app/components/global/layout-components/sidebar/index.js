@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import React, { useState } from "react";
+import React from "react";
 import {
   MdAutoAwesomeMosaic,
   MdPriceChange,
@@ -25,7 +25,7 @@ const menulist = [
   {
     title: "Sales Pipeline",
     id: "sales-pipeline",
-    path: "/",
+    path: "/sales-pipeline",
     icon: <MdPriceChange />,
     role: "all",
   },
@@ -82,7 +82,7 @@ export default function sidebar() {
             href="/"
             className="flex flex-row items-center justify-center p-5 h-12 w-full"
           >
-            <Image src="/logo-lead.png" width={500} height={500} alt="Logo" />
+            <Image src="/logo-lead.png" width={500} height={500} alt="Logo" quality={50} />
           </Link>
         </div>
 

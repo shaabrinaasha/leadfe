@@ -1,5 +1,12 @@
+"use client";
 import React from "react";
+import { IoInformationCircle } from "react-icons/io5";
 
+import { Tooltip } from "@mui/material";
+
+import dynamic from "next/dynamic";
+
+// const Tooltip = dynamic(() => import("@mui/material/Tooltip"));
 
 export default function textfield({
   id,
@@ -9,13 +16,36 @@ export default function textfield({
   value,
   icon,
   disabled,
-  mandatory,
-  type='text',
+  mandatory = false,
+  type = "text",
+  useTooltip = false,
+  tootltipText,
 }) {
+  const tooltipIcon = () => {
+    return (
+      <div className="ml-1">
+        <Tooltip
+          title={
+            <React.Fragment>
+              <p>{tootltipText}</p>
+            </React.Fragment>
+          }
+        >
+          <div>
+            <IoInformationCircle className="text-[17px] text-sky-800 hover:text-sky-600" />
+          </div>
+        </Tooltip>
+      </div>
+    );
+  };
   return (
     <div className="mb-4 mx-1 w-full ">
-      <label className="flex text-slate-900 text-[13px] font-semibold mb-2" htmlFor={id}>
-        {label} {mandatory==true?<p className="text-red-600">*</p>:""}
+      <label
+        className="flex text-slate-900 text-[13px] font-semibold mb-2 items-center"
+        htmlFor={id}
+      >
+        {label} {mandatory == true ? <p className="text-red-600">*</p> : ""}{" "}
+        {useTooltip == true ? tooltipIcon() : ""}
       </label>
       <div className="w-full flex justify-end items-center relative">
         <input

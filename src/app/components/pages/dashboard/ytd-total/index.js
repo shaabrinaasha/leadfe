@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { calcPercentage, abbrNum } from "@/app/utils/functions";
+import { calcPercentage, formatCount } from "@/app/utils/functions";
 
 export default function yearToDateTotal({ data }) {
   const [ytd, setYTD] = useState({
@@ -41,7 +41,7 @@ export default function yearToDateTotal({ data }) {
           </div>
 
           <p className="text-[15px] font-bold items-center text-center">
-            IDR {abbrNum(parseInt(ytd.brokerage), 2)}
+            IDR {formatCount(parseInt(ytd.brokerage))}
           </p>
         </div>
         {/* consultation fee */}
@@ -52,7 +52,7 @@ export default function yearToDateTotal({ data }) {
           </div>
 
           <p className="text-[15px] font-bold items-center text-center">
-            IDR {abbrNum(parseInt(ytd.consultation), 2)}
+            IDR {formatCount(parseInt(ytd.consultation))}
           </p>
         </div>
       </div>
@@ -76,13 +76,13 @@ export default function yearToDateTotal({ data }) {
       <div className="flex justify-between">
         <div>
           <p className="text-[18px] font-semibold">
-            IDR {abbrNum(parseInt(ytd.total), 3)}
+            IDR {formatCount(parseInt(ytd.total))}
           </p>
           <p className="text-[15px] font-regular">Total Estimated Income</p>
         </div>
         <div className="flex flex-col items-end">
           <p className="text-[18px] font-semibold">
-            IDR {abbrNum(parseInt(ytd.budget), 3)}
+            IDR {formatCount(parseInt(ytd.budget))}
           </p>
           <p className="text-[15px] font-regular">Budget</p>
         </div>

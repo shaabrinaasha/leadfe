@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { calcPercentage, abbrNum } from "@/app/utils/functions";
+import { calcPercentage, formatCount } from "@/app/utils/functions";
 
 export default function monthlyTotal({ data }) {
   const [monthly, setMonthly] = useState({
@@ -17,10 +17,10 @@ export default function monthlyTotal({ data }) {
     const brokeragePercent = calcPercentage(data.brokerage, data.total);
     setMonthly({
       ...monthly,
-      budget: data.budget,
-      brokerage: data.brokerage,
-      consultation: data.consultation,
-      total: data.total,
+      budget: formatCount(parseInt(data.budget), true),
+      brokerage: formatCount(parseInt(data.brokerage), true),
+      consultation: formatCount(parseInt(data.consultation), true),
+      total: formatCount(parseInt(data.total), true),
       totalPercent: totalPercent,
       brokeragePercent: brokeragePercent,
     });
@@ -41,7 +41,7 @@ export default function monthlyTotal({ data }) {
           </div>
 
           <p className="text-[15px] font-bold items-center text-center">
-            IDR {abbrNum(parseInt(monthly.brokerage), 2)}
+            IDR {monthly.brokerage}
           </p>
         </div>
         {/* consultation fee */}
@@ -52,7 +52,7 @@ export default function monthlyTotal({ data }) {
           </div>
 
           <p className="text-[15px] font-bold items-center text-center">
-            IDR {abbrNum(parseInt(monthly.consultation), 2)}
+            IDR {monthly.consultation}
           </p>
         </div>
       </div>
@@ -76,13 +76,13 @@ export default function monthlyTotal({ data }) {
       <div className="flex justify-between">
         <div>
           <p className="text-[18px] font-semibold">
-            IDR {abbrNum(parseInt(monthly.total), 3)}
+            IDR {monthly.total}
           </p>
           <p className="text-[15px] font-regular">Total Estimated Income</p>
         </div>
         <div className="flex flex-col items-end">
           <p className="text-[18px] font-semibold">
-            IDR {abbrNum(parseInt(monthly.budget), 3)}
+            IDR {monthly.budget}
           </p>
           <p className="text-[15px] font-regular">Budget</p>
         </div>

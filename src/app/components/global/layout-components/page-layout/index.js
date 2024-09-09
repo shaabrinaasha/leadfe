@@ -4,21 +4,20 @@ import Wrapper from "../wrapper";
 import Header from "../header";
 import TitleBar from "../title-bar";
 import dynamic from "next/dynamic";
+// import Sidebar from '../sidebar';
 
 // const TitleBar = dynamic(() => import("../title-bar"), {
 //   ssr: false,
 // });
 
-const Sidebar = dynamic(() => import("../sidebar"), {
-    ssr: false,
-  });
+const Sidebar = dynamic(() => import("../sidebar"), );
 
 export default function PageLayout({children, title}) {
   return (
     <main className="flex">
       <Sidebar/>
       <div className="flex-col w-full">
-        <Header></Header>
+        {/* <Header></Header> */}
         <Wrapper>
           <ContentLayout>
             <TitleBar title={title}></TitleBar>

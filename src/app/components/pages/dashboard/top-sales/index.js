@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { calcPercentage, abbrNum } from "@/app/utils/functions";
+import {  formatCount } from "@/app/utils/functions";
 import Link from "next/link";
 
 export default function topSales({ data }) {
@@ -39,13 +39,13 @@ export default function topSales({ data }) {
       <div className="flex flex-col">
         
         {sales.map((data, idx) => (
-          <Link href={"/dashboard"}>
-          <div key={data.sales_id} className="flex justify-between items-center border-2 p-4 my-1 hover:bg-gradient-to-b from-indigo-500 to-indigo-600 border-indigo-500 drop-shadow-md rounded-xl hover:text-white">
+          <Link href={"/dashboard"} key={idx}>
+          <div  className="flex justify-between items-center border-2 p-4 my-1 hover:bg-gradient-to-b from-indigo-500 to-indigo-600 border-indigo-500 drop-shadow-md rounded-xl hover:text-white">
           <div>
             <p className="font-semibold text-[15px]">{data.insured_name}</p>
             <p className="text-gray-400 text-[12px]">{data.account_owner}</p>
           </div>
-          <p className="font-bold text-[15px]">IDR {abbrNum(parseInt(data.estimated_income),2)}</p>
+          <p className="font-bold text-[15px]">IDR {formatCount(parseInt(data.estimated_income))}</p>
         </div></Link>
         ))}
       </div>

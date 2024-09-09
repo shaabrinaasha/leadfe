@@ -7,8 +7,8 @@ import { FaAngleRight } from "react-icons/fa6";
 
 const roleData = [
   {
-    title: "Management",
-    value: "management",
+    title: "All",
+    value: "all",
   },
   {
     title: "Aviation",
@@ -28,43 +28,29 @@ const roleData = [
   },
 ];
 
-const ebUserData = [
-  {
-    title: "John Doe",
-    value: "US001",
-  },
-  {
-    title: "Jane Doe",
-    value: "US002",
-  },
-  {
-    title: "Richard Smith",
-    value: "US003",
-  },
 
-];
 
-export default function dashboardFilter() {
+export default function salesListFilter({handleFilter,query, setQuery}) {
   const [isOpen, setIsOpen] = useState(false);
   const [isEB, setIsEB] = useState(false);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
-    setIsEB(false);
   };
 
-  const toggleEB = () => {
-    setIsEB(!isEB);
-  };
+  const handleClick = (value) => {
+    setQuery(value) 
+    toggleDropdown()
+  }
 
   return (
     <div className="relative"  >
       <div>
         <button
           onClick={() => toggleDropdown()}
-          className="flex w-full bg-white hover:bg-slate-100 border-2 justify-between text-[12px] border-sky-600 py-1 px-2  rounded-lg  items-center"
+          className="flex h-[35px] w-full bg-white hover:bg-slate-100 border-2 justify-between text-[12px] border-sky-600 py-1 px-2  rounded-lg  items-center"
         >
-          <p className=" font-medium text-gray-500 ">Filter</p>
+          <p className=" font-medium text-gray-500 ">{query==""?"Filter":query}</p>
           <FaFilter className="text-sky-600" />
         </button>
       </div>
@@ -81,37 +67,16 @@ export default function dashboardFilter() {
                 key={idx}
                 value={item.value}
                 className="px-5 py-1 hover:bg-slate-100 overflow-hidden flex items-center  justify-between"
-                onClick={item.value=="EB"?()=>toggleEB():null}
-                
+                onClick={()=>handleClick(item.value)}
               >
-                {item.title}{item.value=="EB"?<FaAngleRight/>:null}
+                {item.title}
               </li>
             );
           })}
         </ul>
 
       </div>
-      <div className="w-[170%]  flex justify-end">
-        <ul
-          className={
-            "grid grid-cols-1 mt-[90px] divide-y bg-white rounded-lg absolute  z-30 w-[200px] border-2 drop-shadow-lg text-sm " +
-            (isEB == false ? "hidden" : "")
-          }
-        >
-          {ebUserData.map((item, idx) => {
-            return (
-              <li
-                key={idx}
-                value={item.value}
-                className="px-5 py-1 hover:bg-slate-100 overflow-hidden"
-              >
-                {item.title} 
-              </li>
-            );
-          })}
-        </ul>
 
-      </div>
     </div>
   );
 }
