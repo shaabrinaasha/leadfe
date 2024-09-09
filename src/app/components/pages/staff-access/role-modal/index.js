@@ -9,23 +9,23 @@ import SubmitButton from "@/app/components/global/blue-button";
 
 const roleData = [
   {
-    title: "Management",
+    label: "Management",
     value: "Management",
   },
   {
-    title: "Aviation",
+    label: "Aviation",
     value: "Aviation",
   },
   {
-    title: "Construction",
+    label: "Construction",
     value: "Construction",
   },
   {
-    title: "Employee Benefit",
+    label: "Employee Benefit",
     value: "Employee Benefit",
   },
   {
-    title: "Others",
+    label: "Others",
     value: "Others",
   },
 ];

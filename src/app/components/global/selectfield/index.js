@@ -58,7 +58,7 @@ export default function selectfield({
         {selectData.map((item, idx) => {
           return (
             <option key={idx} value={item.value}>
-              {item.title}
+              {item.label}
             </option>
           );
         })}

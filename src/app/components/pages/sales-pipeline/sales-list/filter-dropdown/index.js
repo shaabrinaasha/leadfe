@@ -7,23 +7,23 @@ import { FaAngleRight } from "react-icons/fa6";
 
 const roleData = [
   {
-    title: "All",
+    label: "All",
     value: "all",
   },
   {
-    title: "Aviation",
+    label: "Aviation",
     value: "aviation",
   },
   {
-    title: "Construction",
+    label: "Construction",
     value: "construction",
   },
   {
-    title: "Employee Benefit",
+    label: "Employee Benefit",
     value: "EB",
   },
   {
-    title: "Others",
+    label: "Others",
     value: "others",
   },
 ];
@@ -69,7 +69,7 @@ export default function salesListFilter({handleFilter,query, setQuery}) {
                 className="px-5 py-1 hover:bg-slate-100 overflow-hidden flex items-center  justify-between"
                 onClick={()=>handleClick(item.value)}
               >
-                {item.title}
+                {item.label}
               </li>
             );
           })}

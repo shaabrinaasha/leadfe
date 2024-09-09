@@ -2,6 +2,7 @@ import React from "react";
 import Section from "@/app/components/global/section";
 import Selectfield from "@/app/components/global/selectfield";
 import Textfield from "@/app/components/global/textfield";
+import SearchableSelect from "@/app/components/global/searchable-select";
 import { sourceTypeData, formStatusData } from "@/app/utils/dummy";
 
 export default function sourceInformationForm({
@@ -66,10 +67,29 @@ export default function sourceInformationForm({
     );
   };
 
+  const sampleOptions = [
+    {
+      label: "Richard",
+      value: "US001",
+    },
+    {
+      label: "Raygun",
+      value: "US002",
+    },
+    {
+      label: "John Doe",
+      value: "US003",
+    },
+    {
+      label: "Bilbo",
+      value: "US004",
+    },
+  ];
+
   const existingSourceForm = () => {
     return (
       <div className="grid md:grid-cols-3 lg:grid-cols-4 px-2 gap-3 mt-7">
-        <Selectfield
+        {/* <Selectfield
           id={"source_id"}
           name={"source_id"}
           placeholder={"Select Existing Source"}
@@ -78,7 +98,8 @@ export default function sourceInformationForm({
           onChange={(e) => handleFieldChange(e, sourceInfo, setSourceInfo)}
           mandatory={true}
           selectData={sourceTypeData}
-        />
+        /> */}
+        <SearchableSelect options={sampleOptions} ></SearchableSelect>
       </div>
     );
   };
@@ -114,8 +135,8 @@ export default function sourceInformationForm({
             }
           />
         </div>
-        {sourceStatus == "new" && newSourceForm()}
-        {sourceStatus == "existing" && existingSourceForm()}
+        {/* {sourceStatus == "new" && newSourceForm()} */}
+        {sourceStatus == "new" && existingSourceForm()}
       </Section>
     </div>
   );

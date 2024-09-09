@@ -53,97 +53,97 @@ export const salesList = [
 
 export const accountOwnerDummy = [
   {
-    title: "Richard",
+    label: "Richard",
     value: "US001",
   },
   {
-    title: "Raygun",
+    label: "Raygun",
     value: "US002",
   },
   {
-    title: "John Doe",
+    label: "John Doe",
     value: "US003",
   },
   {
-    title: "Bilbo",
+    label: "Bilbo",
     value: "US004",
   },
 ];
 
 export const businessUnitData = [
   {
-    title: "Aviation",
+    label: "Aviation",
     value: "aviation",
   },
   {
-    title: "Construction",
+    label: "Construction",
     value: "construction",
   },
   {
-    title: "Employee Benefit",
+    label: "Employee Benefit",
     value: "EB",
   },
   {
-    title: "Others",
+    label: "Others",
     value: "others",
   },
 ];
 
 export const accountTypeData = [
   {
-    title: "New",
+    label: "New",
     value: "new",
   },
   {
-    title: "Renewal",
+    label: "Renewal",
     value: "renewal",
   },
 ];
 
 export const newAccountStatusData = [
   {
-    title: "New Account",
+    label: "New Account",
     value: "new",
   },
   {
-    title: "Affiliated with Existing Account",
+    label: "Affiliated with Existing Account",
     value: "affiliated",
   },
 ];
 
 export const renewalAccountStatusData = [
   {
-    title: "Affiliated with Existing Account",
+    label: "Affiliated with Existing Account",
     value: "affiliated",
   },
   {
-    title: "Existing Account",
+    label: "Existing Account",
     value: "exisiting",
   },
 ];
 
 export const formStatusData = [
   {
-    title: "New",
+    label: "New",
     value: "new",
   },
   {
-    title: "Existing",
+    label: "Existing",
     value: "existing",
   },
 ];
 
 export const sourceTypeData = [
   {
-    title: "Insured",
+    label: "Insured",
     value: "insured",
   },
   {
-    title: "Insurer",
+    label: "Insurer",
     value: "insurer",
   },
   {
-    title: "Business Partner",
+    label: "Business Partner",
     value: "business_partner",
   },
 ];

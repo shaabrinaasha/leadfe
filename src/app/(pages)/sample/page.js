@@ -8,11 +8,11 @@ import Searchfield from "@/app/components/global/searchfield";
 import SubmitButton from "@/app/components/global/blue-button"
 
 const selectSample = [
-  { value: "1", title: "Option 1" },
-  { value: "2", title: "Option 2" },
-  { value: "3", title: "Option 3" },
-  { value: "4", title: "Option 4" },
-  { value: "5", title: "Option 5" },
+  { value: "1", label: "Option 1" },
+  { value: "2", label: "Option 2" },
+  { value: "3", label: "Option 3" },
+  { value: "4", label: "Option 4" },
+  { value: "5", label: "Option 5" },
 ];
 
 export default function sample() {

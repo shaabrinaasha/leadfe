@@ -7,38 +7,38 @@ import { FaAngleRight } from "react-icons/fa6";
 
 const roleData = [
   {
-    title: "Management",
+    label: "Management",
     value: "management",
   },
   {
-    title: "Aviation",
+    label: "Aviation",
     value: "aviation",
   },
   {
-    title: "Construction",
+    label: "Construction",
     value: "construction",
   },
   {
-    title: "Employee Benefit",
+    label: "Employee Benefit",
     value: "EB",
   },
   {
-    title: "Others",
+    label: "Others",
     value: "others",
   },
 ];
 
 const ebUserData = [
   {
-    title: "John Doe",
+    label: "John Doe",
     value: "US001",
   },
   {
-    title: "Jane Doe",
+    label: "Jane Doe",
     value: "US002",
   },
   {
-    title: "Richard Smith",
+    label: "Richard Smith",
     value: "US003",
   },
 
@@ -84,7 +84,7 @@ export default function dashboardFilter() {
                 onClick={item.value=="EB"?()=>toggleEB():null}
                 
               >
-                {item.title}{item.value=="EB"?<FaAngleRight/>:null}
+                {item.label}{item.value=="EB"?<FaAngleRight/>:null}
               </li>
             );
           })}
@@ -105,7 +105,7 @@ export default function dashboardFilter() {
                 value={item.value}
                 className="px-5 py-1 hover:bg-slate-100 overflow-hidden"
               >
-                {item.title} 
+                {item.label} 
               </li>
             );
           })}

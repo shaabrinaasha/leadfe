@@ -10,23 +10,23 @@ import DeleteButton from "@/app/components/global/red-button";
 
 const roleData = [
   {
-    title: "Management",
+    label: "Management",
     value: "management",
   },
   {
-    title: "Aviation",
+    label: "Aviation",
     value: "aviation",
   },
   {
-    title: "Construction",
+    label: "Construction",
     value: "construction",
   },
   {
-    title: "Employee Benefit",
+    label: "Employee Benefit",
     value: "EB",
   },
   {
-    title: "Others",
+    label: "Others",
     value: "others",
   },
 ];
