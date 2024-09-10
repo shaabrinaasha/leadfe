@@ -152,7 +152,7 @@ export default function salesListTable({ data }) {
                 scope="row"
                 className="hover:text-sky-600 hover:font-semibold "
               >
-                <Link href={"/sales-pipeline"}>{row.sales_id}</Link>
+                <Link href={"/sales-pipeline/"+row.sales_id}>{row.sales_id}</Link>
               </TableCell>
               <TableCell align="left">
                 {dayjs(row.created_at).format("DD MMM YYYY")}

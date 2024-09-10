@@ -271,3 +271,122 @@ export const currencyData = [
     value: "eur",
   },
 ];
+
+export const salesDetailProgress = [
+  {
+    progress: "0",
+    label: "Contact",
+    requirements: "Call Made/Meeting up/Introduction to client",
+  },
+  {
+    progress: "5",
+    label: "Prospect Review",
+    requirements:
+      "Prospect Judged as a legitimate revenue opportunity for the next 12 months",
+  },
+  {
+    progress: "10",
+    label: "Productive Meeting",
+    requirements:
+      "Have had a productive meeting with the prospect/ Decision Maker",
+  },
+  {
+    progress: "20",
+    label: "Bid Invitation",
+    requirements: "Invitation to include us in Bid",
+  },
+  {
+    progress: "40",
+    label: "Proposal Submission",
+    requirements: "Written Proposal Submitted",
+  },
+  {
+    progress: "60",
+    label: "Still in Mix",
+    requirements:
+      "Deal Status Still in Mix (e.g. shortlisted or oral presentation)",
+  },
+  {
+    progress: "80",
+    label: "Broker of Record",
+    requirements: "Broker of Record /Letter of Appointment issued to us",
+  },
+  {
+    progress: "100",
+    label: "Close Deal",
+    requirements: "Close Deal With Client",
+  },
+  {
+    progress: "100",
+    label: "Endorsement",
+    requirements: "Received final endorsement",
+  },
+];
+
+export const salesDetailDummy = {
+  accountInfo: {
+    created_at: "01 Jan 2024",
+    created_by: "US001",
+    sales_status: "pending", //win, lost , pending(default)
+    progress: "10",
+    account_owner: "John Doe",
+    business_unit: "Aviation",
+    insurance_type: "Aviation Aircraft",
+    account_type: "New",
+    account_status: "Affiliated with Existing Account",
+    existing_account: "PT. Blacksky Aviation",
+  },
+  sourceInfo: {
+    source_id: "SC001",
+    type: "Business Partner",
+    name: "Janet Smith",
+    email: "Janetsmith@gmail.com",
+    mobile: "+62 812897329773",
+    agreement_no: "008/LIB-BP/1-2023",
+  },
+  insuredInfo: {
+    insured_id: "IN001",
+    company_id: "CP001",
+    name: "PT. Whitesky Aviation",
+    address:
+      "Secure Building, Tower A, 1st Floor, Jl. Raya Protokol Halim Perdanakusuma, RT.5/RW.10, Halim Perdana Kusumah, Kec. Makasar, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13610",
+    phone: "0218092365",
+  },
+  picInfo: {
+    pic_id: "PC001",
+    name: "Richard Smith",
+    email: "Richardsmith@gmail.com",
+    mobile: "+62 812897329773",
+  },
+  salesEst: {
+    inception_date: "10 Jan 2024", //if existing then select source and autofill source_id
+    premium_currency: "IDR",
+    premium_amount: "100000000",
+    brokerage_currency: "IDR",
+    brokerage_amount: "15000000",
+    consultation_currency: "IDR",
+    consultation_amount: "2000000",
+    source_currency: "IDR",
+    source_amount: "5000000",
+    endorsement_currency: "IDR",
+    endorsement_amount: "70000000",
+  },
+};
+
+export const selectLostSalesStatus = [
+  {
+    label: "Lost",
+    value: "lost",
+  },
+];
+
+export const positionData = [
+  {
+    label: "Head",
+    value: "head",
+  },
+  {
+    label: "Staff",
+    value: "staff",
+  },
+];

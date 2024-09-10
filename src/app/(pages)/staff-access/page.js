@@ -24,6 +24,7 @@ export default function page(props) {
   const showDeleteUser = props.searchParams?.showDeleteUser;
   const userID = props.searchParams?.userID;
   const userRole = props.searchParams?.userRole;
+  const userPosition = props.searchParams?.userPosition;
   return (
     <PageLayout title="Staff Access"> 
       <div>
@@ -44,7 +45,7 @@ export default function page(props) {
         </div>
       </div>
       {showCreate && <CreateUserModal/>}
-      {showChangeRole && <ChangeRoleModal userID={userID} userRole={userRole}/>}
+      {showChangeRole && <ChangeRoleModal userID={userID} userRole={userRole} userPosition={userPosition}/>}
       {showDeleteUser && <DeleteUserModal userID={userID} />}
     </PageLayout>
     

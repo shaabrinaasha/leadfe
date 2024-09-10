@@ -51,7 +51,7 @@ export default function salesListHeader({ setFilteredList, data }) {
     <div className="flex justify-between items-center">
       {/* <SalesListSearch /> */}
       <div className="mt-2">
-        <div>
+        <div className="lg:w-72">
           <Searchfield
             id={"search_bar"}
             placeholder={"search account owner, name of insured..."}

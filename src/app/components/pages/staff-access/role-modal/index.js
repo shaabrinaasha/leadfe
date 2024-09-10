@@ -6,6 +6,7 @@ import Textfield from "@/app/components/global/textfield";
 import Emailfield from "@/app/components/global/emailfield";
 import Selectfield from "@/app/components/global/selectfield";
 import SubmitButton from "@/app/components/global/blue-button";
+import { positionData } from "@/app/utils/dummy";
 
 const roleData = [
   {
@@ -30,14 +31,12 @@ const roleData = [
   },
 ];
 
-export default function changeRoleModal({userID, userRole}) {
+export default function changeRoleModal({ userID, userRole }) {
   return (
     <ModalBase
       title={"Change user Role"}
       closePath={"/staff-access"}
-      subtitle={
-        "Change " + userID + "'s Role"
-      }
+      subtitle={"Change " + userID + "'s Role"}
     >
       <form className="md:w-[300px]">
         <Selectfield
@@ -50,7 +49,21 @@ export default function changeRoleModal({userID, userRole}) {
           selectData={roleData}
         />
 
-        <SubmitButton width={"w-full mt-5"} type={"submit"}>Submit</SubmitButton>
+        <div className="my-4">
+          <Selectfield
+            label={"Position"}
+            id={"position"}
+            mandatory={true}
+            placeholder={"Select user position"}
+            defaultValue={"header"}
+            onChange={""}
+            selectData={positionData}
+          />
+        </div>
+
+        <SubmitButton width={"w-full mt-5"} type={"submit"}>
+          Submit
+        </SubmitButton>
       </form>
     </ModalBase>
   );

@@ -6,6 +6,7 @@ import EditBudgetModal from "@/app/components/pages/budget/edit-modal";
 import { MdAdd } from "react-icons/md";
 import OverallBudgetTable from "@/app/components/pages/budget/overall-table";
 import EmployeeBudgetTable from "@/app/components/pages/budget/employee-table";
+import CurrencyTable from "@/app/components/pages/budget/currency-table";
 
 import dynamic from "next/dynamic";
 import Link from "next/link";
@@ -59,6 +60,12 @@ export default function budget(props) {
         <div className="p-5">
           <h1 className="text-[18px] font-bold text-sky-950">Employee Benefit Personal Budget</h1>
           <EmployeeBudgetTable />
+        </div>
+      </div>
+      <div className="bg-white drop-shadow-lg rounded-lg my-5">
+        <div className="p-5">
+          <h1 className="text-[18px] font-bold text-sky-950">Exchange Rates</h1>
+          <CurrencyTable />
         </div>
       </div>
       {showAdd && <AddBudgetModal/>}

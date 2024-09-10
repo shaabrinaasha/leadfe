@@ -6,11 +6,9 @@ import { FaSort, FaSortUp, FaSortDown } from "react-icons/fa6";
 // import TableCell from "@mui/material/TableCell";
 // import TableContainer from "@mui/material/TableContainer";
 // import TableHead from "@mui/material/TableHead";
-// import TableRow from "@mui/material/TableRow";
 
-import RoleButton from "@/app/components/global/blue-button";
-import DeleteButton from "@/app/components/global/red-button";
-import dynamic from "next/dynamic";
+
+// import TableRow from "@mui/material/TableRow";
 
 const Table = dynamic(() =>
   import("@mui/material/Table")
@@ -32,58 +30,25 @@ const TableHead = dynamic(() =>
 const TableRow = dynamic(() =>
   import("@mui/material/TableRow")
 );
-
-
 import Link from "next/link";
+import dynamic from "next/dynamic";
 
-function createData(username, name, email, mobile, role, position) {
-  return { username, name, email, mobile, role, position };
+function createData(year, USD, EUR) {
+  return { year, USD, EUR };
 }
 
 const rows = [
-  createData(
-    "john.doe",
-    "John Doe",
-    "john.doe@leadbrokers-id",
-    "+6285893271826",
-    "Aviation",
-    "Head"
-  ),
-  createData(
-    "jane.doe",
-    "Jane Doe",
-    "jane.doe@leadbrokers-id",
-    "+6285893271132",
-    "Construction",
-    "Head"
-  ),
-  createData(
-    "dianna.dan",
-    "Dianna Daniella Florentine",
-    "dianna.dan@leadbrokers-id",
-    "+6285893278927",
-    "Employee Benefit","Staff"
-  ),
-  createData(
-    "ahmad.razi",
-    "Ahmad Razi",
-    "ahmad.razi@leadbrokers-id",
-    "+6285893271826",
-    "Management","-"
-  ),
+  createData("2024", "15.000", "14.000",),
+  createData("2025", "16.000", "15.000",),
 ];
 
 const tableHeader = [
-  { title: "Username", id: "username" },
-  { title: "Name", id: "name" },
-  { title: "Email", id: "email" },
-  { title: "Mobile", id: "mobile" },
-  { title: "Role", id: "role" },
-  { title: "Position", id: "position" },
-  { title: "Action", id: false },
+  { title: "Year", id: "year" },
+  { title: "USD to IDR", id: "USD" },
+  { title: "EUR to IDR", id: "EUR" },
 ];
 
-export default function StaffAccessTable() {
+export default function currencyTable() {
   const [sortQuery, setSortQuery] = useState("");
   const [sortType, setSortType] = useState("");
   const [sortIcon, setSortIcon] = useState({ icon: <FaSort />, id: "default" });
@@ -148,35 +113,10 @@ export default function StaffAccessTable() {
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
               <TableCell component="th" scope="row">
-                {row.username}
+                {row.year}
               </TableCell>
-              <TableCell align="left">{row.name}</TableCell>
-              <TableCell align="left">{row.email}</TableCell>
-              <TableCell align="left">{row.mobile}</TableCell>
-              <TableCell align="left">{row.role}</TableCell>
-              <TableCell align="left">{row.position}</TableCell>
-              <TableCell align="left">
-                <div className="flex">
-                  <Link
-                    href={
-                      "/staff-access/?showChangeRole=true&userID=" +
-                      row.username +
-                      "&userRole=" +
-                      row.role + "&userPosition=" + row.position
-                    }
-                  >
-                    <RoleButton width={"w-[100px]"}>Change Role</RoleButton>
-                  </Link>
-                  <Link
-                    href={
-                      "/staff-access/?showDeleteUser=true&userID=" +
-                      row.username
-                    }
-                  >
-                    <DeleteButton>Delete</DeleteButton>
-                  </Link>
-                </div>
-              </TableCell>
+              <TableCell align="left">{row.USD}</TableCell>
+              <TableCell align="left">{row.EUR}</TableCell>
             </TableRow>
           ))}
         </TableBody>
