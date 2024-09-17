@@ -390,3 +390,151 @@ export const positionData = [
     value: "staff",
   },
 ];
+
+export const reportDummy = [
+  {
+    sales_id: "SP001",
+    created_at: "2024-09-06",
+    account_owner: "Richard",
+    insured_name: "PT Whitesky Aviation",
+    insurance_type: "Aviation Aircraft",
+    progress: "100",
+    estimated_income: "100000000",
+    business_unit: "aviation",
+    //addition
+    source:"Dyandra",
+    inception_date: "10 Jan 2024", //if existing then select source and autofill source_id
+    //est
+    premium_currency: "IDR",
+    premium_amount: "100000000",
+    brokerage_currency: "IDR",
+    brokerage_amount: "15000000",
+    consultation_currency: "IDR",
+    consultation_amount: "2000000",
+    income_currency: "IDR",
+    income_amount: "5000000",
+    //progress header
+    update_diff:"10",
+    input_diff : "20",
+    requirement: "Scan Placing Slip Signed by Insurer and QS to Client",
+    uploaded: "Quotation Slip",
+    //
+    account_type: "new"
+  },
+  {
+    sales_id: "SP002",
+    created_at: "2024-08-05",
+    account_owner: "Bilbo",
+    insured_name: "PT Blacksky Aviation",
+    insurance_type: "Aviation Aircraft",
+    progress: "80",
+    estimated_income: "50000000",
+    business_unit: "aviation",
+    //addition
+    source:"Dyandra",
+    inception_date: "10 Jan 2024", //if existing then select source and autofill source_id
+    //est
+    premium_currency: "IDR",
+    premium_amount: "100000000",
+    brokerage_currency: "IDR",
+    brokerage_amount: "15000000",
+    consultation_currency: "IDR",
+    consultation_amount: "2000000",
+    income_currency: "IDR",
+    income_amount: "5000000",
+    //progress header
+    update_diff:"10",
+    input_diff : "20",
+    requirement: "Scan Placing Slip Signed by Insurer and QS to Client",
+    uploaded: "Quotation Slip",
+    //
+    account_type: "new"
+  },
+  {
+    sales_id: "SP003",
+    created_at: "2024-09-01",
+    account_owner: "John Doe",
+    insured_name: "PT Wijaya Karya",
+    insurance_type: "CECR",
+    progress: "0",
+    estimated_income: "80000000",
+    business_unit: "construction",
+    //addition
+    source:"Dyandra",
+    inception_date: "10 Jan 2024", //if existing then select source and autofill source_id
+    //est
+    premium_currency: "IDR",
+    premium_amount: "100000000",
+    brokerage_currency: "IDR",
+    brokerage_amount: "15000000",
+    consultation_currency: "IDR",
+    consultation_amount: "2000000",
+    income_currency: "IDR",
+    income_amount: "5000000",
+    //progress header
+    update_diff:"10",
+    input_diff : "20",
+    requirement: "Scan Placing Slip Signed by Insurer and QS to Client",
+    uploaded: "Quotation Slip",
+    //
+    account_type: "new"
+  },
+  {
+    sales_id: "SP004",
+    created_at: "2024-05-01",
+    account_owner: "Raygun",
+    insured_name: "PT Poseidon ",
+    insurance_type: "Health Insurance",
+    progress: "20",
+    estimated_income: "2000000",
+    business_unit: "eb",
+    //addition
+    source:"Dyandra",
+    inception_date: "10 Jan 2024", //if existing then select source and autofill source_id
+    //est
+    premium_currency: "IDR",
+    premium_amount: "100000000",
+    brokerage_currency: "IDR",
+    brokerage_amount: "15000000",
+    consultation_currency: "IDR",
+    consultation_amount: "2000000",
+    income_currency: "IDR",
+    income_amount: "5000000",
+    //progress header
+    update_diff:"10",
+    input_diff : "20",
+    requirement: "Scan Placing Slip Signed by Insurer and QS to Client",
+    uploaded: "Quotation Slip",
+    //
+    account_type: "new"
+  },
+  {
+    sales_id: "SP005",
+    created_at: "2024-06-08",
+    account_owner: "Raygun",
+    insured_name: "PT Asuransi Jiwa",
+    insurance_type: "Motor Vehicle",
+    progress: "50",
+    estimated_income: "11500000",
+    business_unit: "others",
+    //addition
+    source:"Dyandra",
+    inception_date: "10 Jan 2024", //if existing then select source and autofill source_id
+    //est
+    premium_currency: "IDR",
+    premium_amount: "100000000",
+    brokerage_currency: "IDR",
+    brokerage_amount: "15000000",
+    consultation_currency: "IDR",
+    consultation_amount: "2000000",
+    income_currency: "IDR",
+    income_amount: "5000000",
+    //progress header
+    update_diff:"10",
+    input_diff : "20",
+    requirement: "Scan Placing Slip Signed by Insurer and QS to Client",
+    uploaded: "Quotation Slip",
+    //
+    account_type: "new"
+  },
+];
