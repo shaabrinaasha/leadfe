@@ -27,15 +27,17 @@ const sampleData = {
   activeSales: "25",
   monthlyTotal: {
     budget: "1000000000",
-    brokerage: "500000000",
-    consultation: "300000000",
-    total: "800000000",
+    brokerage: "800000000",
+    consultation: "500000000",
+    total: "1300000000",
+    max: "2000000000"
   },
   yearToDateTotal: {
     budget: "2000000000",
     brokerage: "1000000000",
     consultation: "650000000",
     total: "1650000000",
+    max: "4000000000"
   },
   yearToDateTrend: {
     monthlyBudget: "1000000000",

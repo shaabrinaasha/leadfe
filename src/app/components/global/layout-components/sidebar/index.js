@@ -32,7 +32,7 @@ const menulist = [
   {
     title: "Report",
     id: "report",
-    path: "/",
+    path: "/report",
     icon: <MdFeed />,
     role: "all",
   },

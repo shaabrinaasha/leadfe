@@ -402,7 +402,7 @@ export const reportDummy = [
     estimated_income: "100000000",
     business_unit: "aviation",
     //addition
-    source:"Dyandra",
+    source: "Dyandra",
     inception_date: "10 Jan 2024", //if existing then select source and autofill source_id
     //est
     premium_currency: "IDR",
@@ -414,12 +414,12 @@ export const reportDummy = [
     income_currency: "IDR",
     income_amount: "5000000",
     //progress header
-    update_diff:"10",
-    input_diff : "20",
+    update_diff: "10",
+    input_diff: "20",
     requirement: "Scan Placing Slip Signed by Insurer and QS to Client",
     uploaded: "Quotation Slip",
     //
-    account_type: "new"
+    account_type: "new",
   },
   {
     sales_id: "SP002",
@@ -431,7 +431,7 @@ export const reportDummy = [
     estimated_income: "50000000",
     business_unit: "aviation",
     //addition
-    source:"Dyandra",
+    source: "Dyandra",
     inception_date: "10 Jan 2024", //if existing then select source and autofill source_id
     //est
     premium_currency: "IDR",
@@ -443,12 +443,12 @@ export const reportDummy = [
     income_currency: "IDR",
     income_amount: "5000000",
     //progress header
-    update_diff:"10",
-    input_diff : "20",
+    update_diff: "10",
+    input_diff: "20",
     requirement: "Scan Placing Slip Signed by Insurer and QS to Client",
     uploaded: "Quotation Slip",
     //
-    account_type: "new"
+    account_type: "new",
   },
   {
     sales_id: "SP003",
@@ -460,7 +460,7 @@ export const reportDummy = [
     estimated_income: "80000000",
     business_unit: "construction",
     //addition
-    source:"Dyandra",
+    source: "Dyandra",
     inception_date: "10 Jan 2024", //if existing then select source and autofill source_id
     //est
     premium_currency: "IDR",
@@ -472,12 +472,12 @@ export const reportDummy = [
     income_currency: "IDR",
     income_amount: "5000000",
     //progress header
-    update_diff:"10",
-    input_diff : "20",
+    update_diff: "10",
+    input_diff: "20",
     requirement: "Scan Placing Slip Signed by Insurer and QS to Client",
     uploaded: "Quotation Slip",
     //
-    account_type: "new"
+    account_type: "new",
   },
   {
     sales_id: "SP004",
@@ -489,7 +489,7 @@ export const reportDummy = [
     estimated_income: "2000000",
     business_unit: "eb",
     //addition
-    source:"Dyandra",
+    source: "Dyandra",
     inception_date: "10 Jan 2024", //if existing then select source and autofill source_id
     //est
     premium_currency: "IDR",
@@ -501,12 +501,12 @@ export const reportDummy = [
     income_currency: "IDR",
     income_amount: "5000000",
     //progress header
-    update_diff:"10",
-    input_diff : "20",
+    update_diff: "10",
+    input_diff: "20",
     requirement: "Scan Placing Slip Signed by Insurer and QS to Client",
     uploaded: "Quotation Slip",
     //
-    account_type: "new"
+    account_type: "new",
   },
   {
     sales_id: "SP005",
@@ -518,7 +518,7 @@ export const reportDummy = [
     estimated_income: "11500000",
     business_unit: "others",
     //addition
-    source:"Dyandra",
+    source: "Dyandra",
     inception_date: "10 Jan 2024", //if existing then select source and autofill source_id
     //est
     premium_currency: "IDR",
@@ -530,11 +530,116 @@ export const reportDummy = [
     income_currency: "IDR",
     income_amount: "5000000",
     //progress header
-    update_diff:"10",
-    input_diff : "20",
+    update_diff: "10",
+    input_diff: "20",
     requirement: "Scan Placing Slip Signed by Insurer and QS to Client",
     uploaded: "Quotation Slip",
     //
-    account_type: "new"
+    account_type: "new",
+  },
+];
+
+export const rateDummy = [
+  {
+    year: "2024",
+    jan: {
+      usd: "15000",
+      eur: "16000",
+    },
+    feb : {
+      usd : "16000",
+      eur: "16000"
+    },
+    mar : {
+      usd : "14000",
+      eur: "13000"
+    },
+    apr : {
+      usd : "15000",
+      eur: "18000"
+    },
+    may : {
+      usd : "0",
+      eur: "0"
+    },
+    jun : {
+      usd : "0",
+      eur: "0"
+    },
+    jul : {
+      usd : "0",
+      eur: "0"
+    },
+    aug : {
+      usd : "0",
+      eur: "0"
+    },
+    sep : {
+      usd : "0",
+      eur: "0"
+    },
+    oct : {
+      usd : "0",
+      eur: "0"
+    },
+    nov : {
+      usd : "0",
+      eur: "0"
+    },
+    dec : {
+      usd : "0",
+      eur: "0"
+    },
+  },
+  {
+    year: "2025",
+    jan: {
+      usd: "13000",
+      eur: "14000",
+    },
+    feb : {
+      usd : "17000",
+      eur: "17000"
+    },
+    mar : {
+      usd : "18000",
+      eur: "15000"
+    },
+    apr : {
+      usd : "16000",
+      eur: "15000"
+    },
+    may : {
+      usd : "10000",
+      eur: "11000"
+    },
+    jun : {
+      usd : "0",
+      eur: "0"
+    },
+    jul : {
+      usd : "0",
+      eur: "0"
+    },
+    aug : {
+      usd : "0",
+      eur: "0"
+    },
+    sep : {
+      usd : "0",
+      eur: "0"
+    },
+    oct : {
+      usd : "0",
+      eur: "0"
+    },
+    nov : {
+      usd : "0",
+      eur: "0"
+    },
+    dec : {
+      usd : "0",
+      eur: "0"
+    },
   },
 ];

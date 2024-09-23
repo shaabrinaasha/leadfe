@@ -1,10 +1,12 @@
 import Searchfield from "@/app/components/global/searchfield";
 // import dynamic from "next/dynamic";
+import YearPicker from "../year-picker";
 import SalesListFilter from "@/app/components/pages/sales-pipeline/sales-list/filter-dropdown";
 import { useEffect, useState } from "react";
 import CreateButton from "@/app/components/global/blue-button";
 import { MdAdd } from "react-icons/md";
 import Link from "next/link";
+import dayjs from "dayjs";
 
 export default function reportHeader({ setFilteredList, data }) {
   const [query, setQuery] = useState("");
@@ -48,15 +50,14 @@ export default function reportHeader({ setFilteredList, data }) {
     }
   };
   return (
-    <div className="flex justify-between items-center">
+    <div className="flex justify-between">
       {/* <SalesListSearch /> */}
-      <div className="mt-2">
-        <div className="lg:w-72">
-          <Searchfield
-            id={"search_bar"}
-            placeholder={"search account owner, name of insured..."}
-            onChange={handleSearch}
-          />
+      <div className="">
+        <div className="grid grid-cols-2 gap-4  ">
+          <p className="text-sky-950 font-semibold text-[15px] mt-4">Year</p>
+          <YearPicker  />
+          <p className="text-sky-950 font-semibold text-[15px]">Current Date</p>
+          <p className="text-sky-950 font-semibold text-[15px]">{dayjs().format("DD MMM YYYY")}</p>
         </div>
       </div>
       <div className="flex items-center">
@@ -67,14 +68,6 @@ export default function reportHeader({ setFilteredList, data }) {
             handleFilter={handleFilter}
           />
         </div>
-        <Link href={"/sales-pipeline/create"}>
-          <CreateButton type={"button"} width={"w-[170px]"}>
-            <div className="flex items-center justify-between">
-              <MdAdd className="text-[15px]" />
-              <p>Create Sales Pipeline</p>
-            </div>
-          </CreateButton>
-        </Link>
       </div>
     </div>
   );

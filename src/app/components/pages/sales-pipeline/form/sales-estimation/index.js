@@ -104,7 +104,7 @@ export default function salesEstimationForm({
           {/* source */}
           <div>
             <h2 className="font-bold text-[15px] text-sky-950 ">
-              Source Fee Estimation
+              Commision Fee Estimation
             </h2>
             <p className="text-[12px] text-red-400 mb-2">
               {"*taken from brokerage fee"}
@@ -113,8 +113,8 @@ export default function salesEstimationForm({
               <Selectfield
                 id={"source_currency"}
                 name={"source_currency"}
-                placeholder={"Insert source currency"}
-                label={"Source Currency"}
+                placeholder={"Insert commision currency"}
+                label={"Commision Currency"}
                 defaultValue={"header"}
                 onChange={(e) => handleFieldChange(e, salesEst, setSalesEst)}
                 mandatory={true}
@@ -123,8 +123,8 @@ export default function salesEstimationForm({
               <Textfield
                 id={"source_amount"}
                 name={"source_amount"}
-                placeholder={"Insert source amount..."}
-                label={"Source Amount"}
+                placeholder={"Insert commision amount..."}
+                label={"Commision Amount"}
                 value={salesEst.source_amount}
                 mandatory={true}
                 onChange={(e) => handleFieldChange(e, salesEst, setSalesEst)}
