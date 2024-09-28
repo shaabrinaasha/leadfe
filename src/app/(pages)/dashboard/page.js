@@ -1,4 +1,3 @@
-
 import React from "react";
 import PageLayout from "@/app/components/global/layout-components/page-layout";
 // import {
@@ -18,7 +17,6 @@ import YearToDateTotal from "@/app/components/pages/dashboard/ytd-total";
 import YearToDateTrend from "@/app/components/pages/dashboard/ytd-trend";
 import TopSales from "@/app/components/pages/dashboard/top-sales";
 
-
 const sampleData = {
   closedSales: {
     win: "20",
@@ -30,14 +28,14 @@ const sampleData = {
     brokerage: "800000000",
     consultation: "500000000",
     total: "1300000000",
-    max: "2000000000"
+    max: "2000000000",
   },
   yearToDateTotal: {
     budget: "2000000000",
-    brokerage: "1000000000",
+    brokerage: "2000000000",
     consultation: "650000000",
-    total: "1650000000",
-    max: "4000000000"
+    total: "2650000000",
+    max: "4000000000",
   },
   yearToDateTrend: {
     monthlyBudget: "1000000000",
@@ -46,55 +44,100 @@ const sampleData = {
         title: "jan",
         brokerage: "500000000",
         consultation: "300000000",
+        endorsement: "200000000",
       },
       {
         title: "feb",
         brokerage: "500000000",
         consultation: "50000000",
+        endorsement: "100000000",
       },
       {
         title: "apr",
         brokerage: "800000000",
         consultation: "40000000",
+        endorsement: "10000000",
       },
       {
         title: "may",
         brokerage: "600000000",
         consultation: "500000000",
+        endorsement: "30000000",
       },
       {
         title: "jun",
         brokerage: "700000000",
         consultation: "100000000",
+        endorsement: "0",
       },
     ],
   },
-  topSales: [
-    {
-      sales_id: "SP001",
-      insured_name: "PT. Whitesky Aviation",
-      estimated_income: "50000000",
-      account_owner : "Jane Doe"
-    },
-    {
-      sales_id: "SP002",
-      insured_name: "PT. Whitesky Aviation",
-      estimated_income: "50000000",
-      account_owner : "Jane Doe"
-    },
-    {
-      sales_id: "SP003",
-      insured_name: "PT. Whitesky Aviation",
-      estimated_income: "50000000",
-      account_owner : "Jane Doe"
-    },
-    {
-      sales_id: "SP004",
-      insured_name: "PT. Whitesky Aviation",
-      estimated_income: "50000000",
-      account_owner : "Jane Doe"
-    },
-  ],
+  topSales: {
+    ongoing: [
+      {
+        sales_id: "SP001",
+        insured_name: "PT. Whitesky Aviation",
+        estimated_income: "50000000",
+        account_owner: "Jane Doe",
+      },
+      {
+        sales_id: "SP002",
+        insured_name: "PT. Whitesky Aviation",
+        estimated_income: "50000000",
+        account_owner: "Jane Doe",
+      },
+      {
+        sales_id: "SP003",
+        insured_name: "PT. Whitesky Aviation",
+        estimated_income: "50000000",
+        account_owner: "Jane Doe",
+      },
+      {
+        sales_id: "SP004",
+        insured_name: "PT. Whitesky Aviation",
+        estimated_income: "50000000",
+        account_owner: "Jane Doe",
+      },
+      {
+        sales_id: "SP005",
+        insured_name: "PT. Whitesky Aviation",
+        estimated_income: "50000000",
+        account_owner: "Jane Doe",
+      },
+    ],
+    won: [
+      {
+        sales_id: "SP006",
+        insured_name: "PT. Blacksky Aviation",
+        estimated_income: "80000000",
+        account_owner: "Richard Doe",
+      },
+      {
+        sales_id: "SP007",
+        insured_name: "PT. Blacksky Aviation",
+        estimated_income: "80000000",
+        account_owner: "Richard Doe",
+      },
+      {
+        sales_id: "SP008",
+        insured_name: "PT. Blacksky Aviation",
+        estimated_income: "80000000",
+        account_owner: "Richard Doe",
+      },
+      {
+        sales_id: "SP009",
+        insured_name: "PT. Blacksky Aviation",
+        estimated_income: "80000000",
+        account_owner: "Richard Doe",
+      },
+      {
+        sales_id: "SP010",
+        insured_name: "PT. Blacksky Aviation",
+        estimated_income: "80000000",
+        account_owner: "Richard Doe",
+      },
+    ],
+  },
 };
 
 export default function dashboard() {
@@ -118,7 +161,10 @@ export default function dashboard() {
             data={sampleData.yearToDateTrend.value}
             budget={sampleData.yearToDateTrend.monthlyBudget}
           />
-          <TopSales data={sampleData.topSales} />
+          <TopSales
+            dataOngoing={sampleData.topSales.ongoing}
+            dataWon={sampleData.topSales.won}
+          />
         </div>
       </div>
     </PageLayout>

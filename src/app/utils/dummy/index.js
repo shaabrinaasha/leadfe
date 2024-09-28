@@ -313,11 +313,13 @@ export const salesDetailProgress = [
   },
   {
     progress: "100",
+    id:"100",
     label: "Close Deal",
     requirements: "Close Deal With Client",
   },
   {
     progress: "100",
+    id:"endorsement",
     label: "Endorsement",
     requirements: "Received final endorsement",
   },

@@ -6,12 +6,14 @@ export default function tab({
   setCurrent,
   progressStatus,
   setProgressStatus,
+  flag,
+  setFlag,
 }) {
   const buttonStyleCondition = (data) => {
-    if (parseInt(current) == parseInt(data)) {
+    if (current == data ) {
       return "bg-sky-600 text-white";
     }
-    if (parseInt(current) < parseInt(data) && parseInt(data) >= 40) {
+    if (parseInt(progressStatus) < parseInt(data) && parseInt(data) >= 40) {
       return "bg-slate-300 ";
     } else {
       return "bg-slate-50 ";
@@ -19,7 +21,7 @@ export default function tab({
   };
 
   const statusCondition = (data) => {
-    if (parseInt(data) <= parseInt(progressStatus)) {
+    if (flag[data].status == true) {
       return "Complete";
     } else {
       return "Incomplete";
@@ -27,7 +29,8 @@ export default function tab({
   };
 
   const statusStyleCondition = (data) => {
-    if (parseInt(data) <= parseInt(progressStatus)) {
+    // console.log(flag[parseInt(data)])
+    if (flag[data].status == true) {
       return " bg-amber-500";
     } else {
       return " bg-gray-500 ";
@@ -40,12 +43,13 @@ export default function tab({
 
   return (
     <div className=" p-5 border-2 border-sky-600 rounded-lg flex overflow-x-auto">
-      {salesDetailProgress.map((data) => (
-        <div className="w-[300px] flex items-center">
+      {salesDetailProgress.map((data, idx) => (
+        <div className="w-[300px] flex items-center" key={idx}>
           <button
+            key={idx}
             disabled={
-              parseInt(data.progress) >= 40 &&
-              parseInt(current) < parseInt(data.progress)
+              (parseInt(data.progress) >= 40 &&
+              parseInt(progressStatus) < parseInt(data.progress) ) 
                 ? true
                 : false
             }

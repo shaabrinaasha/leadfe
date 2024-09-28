@@ -7,8 +7,29 @@ import Input40 from "../file-input/input-40";
 import Input60 from "../file-input/input-60";
 import Input80 from "../file-input/input-80";
 import Input100 from "../file-input/input-100";
+import axios from "axios";
 
 export default function tabContent({ current, flag, setFlag, handleNext }) {
+  // const [dataFetch, setDataFetch] = useState({
+  //   0: "",
+  //   5: "",
+  //   10: "",
+  //   20: "",
+  //   40: "",
+  //   60: "",
+  //   80: "",
+  //   100: "",
+  // });
+
+  const [dataFetch, setDataFetch] = useState(null);
+
+  useEffect(() => {
+    axios
+      .get("/progress-dummy.json")
+      .then((res) => console.log(setDataFetch(res.data)))
+      .catch((err) => console.log(err));
+  }, []);
+
   const [title, setTitle] = useState({
     progress: "",
     label: "Loading...",
@@ -42,6 +63,7 @@ export default function tabContent({ current, flag, setFlag, handleNext }) {
           [current]: {
             status: true,
             notes: true,
+            file: flag[current].file,
           },
         };
       });
@@ -50,18 +72,39 @@ export default function tabContent({ current, flag, setFlag, handleNext }) {
         return {
           ...flag,
           [current]: {
-            status: true,
+            status: flag[current].status,
             notes: true,
+            file: flag[current].file,
           },
         };
       });
     }
   };
 
-  //   const formatFlagIndex = () => {
-  //     const index = "p" + current;
-  //   }
-  // console.log(flag[current])
+  const handleEnabled = () => {
+    const toint = parseInt(current);
+    if (toint < 40 && flag[current].status == true) {
+      return true;
+    } else if (
+      toint >= 40 &&
+      (flag[current].status == true || flag[current].file == false)
+    ) {
+      return true;
+    }
+    return false;
+  };
+
+  const handleSubmit = (param) => {
+    setFlag({
+      ...flag,
+      [current]: {
+        status: flag[current].status,
+        notes: flag[current].notes,
+        file: true,
+      },
+    });
+  };
+
   return (
     <div className="mt-5">
       <div className="flex justify-between">
@@ -75,7 +118,7 @@ export default function tabContent({ current, flag, setFlag, handleNext }) {
         </div>
 
         <YellowButton
-          //   disabled={flag[current].status == false ? true : false}
+          disabled={handleEnabled()}
           width={"w-[150px]"}
           type={"button"}
           onClick={handleNext}
@@ -83,48 +126,65 @@ export default function tabContent({ current, flag, setFlag, handleNext }) {
           Move to Next Stage
         </YellowButton>
       </div>
-      {current == "40" && (
+      {(current == "40") && (dataFetch == null ? (
+        <p>Loading...</p>
+      ) : (
         <Input40
-          handleSubmitNote={handleSubmitNote}
+          handleSubmit={handleSubmit}
           handleFieldChange={handleFieldChange}
           notes={notes}
           setNotes={setNotes}
+          data={dataFetch["40"]}
         />
-      )}
+      ))}
 
-      {current == "60" && (
+      {current == "60" && (dataFetch == null ? (
+        <p>Loading...</p>
+      ) : (
         <Input60
-          handleSubmitNote={handleSubmitNote}
+          handleSubmit={handleSubmit}
           handleFieldChange={handleFieldChange}
           notes={notes}
           setNotes={setNotes}
+          data={dataFetch["60"]}
         />
-      )}
+      ))}
 
-      {current == "80" && (
+      {current == "80" && (dataFetch == null ? (
+        <p>Loading...</p>
+      ) : (
         <Input80
-          handleSubmitNote={handleSubmitNote}
+          handleSubmit={handleSubmit}
           handleFieldChange={handleFieldChange}
           notes={notes}
           setNotes={setNotes}
+           data={dataFetch["80"]}
         />
-      )}
+      ))}
 
-      {current == "100" && (
+      {current == "100" && (dataFetch == null ? (
+        <p>Loading...</p>
+      ) : (
         <Input100
+          handleSubmit={handleSubmit}
+          handleFieldChange={handleFieldChange}
+          notes={notes}
+          setNotes={setNotes}
+          data={dataFetch["100"]}
+        />
+      ))}
+
+      {dataFetch == null ? (
+        <p>Loading...</p>
+      ) : (
+        <NotesField
           handleSubmitNote={handleSubmitNote}
           handleFieldChange={handleFieldChange}
           notes={notes}
           setNotes={setNotes}
+          data={dataFetch[current]}
         />
       )}
-
-      <NotesField
-        handleSubmitNote={handleSubmitNote}
-        handleFieldChange={handleFieldChange}
-        notes={notes}
-        setNotes={setNotes}
-      ></NotesField>
     </div>
   );
 }

@@ -14,7 +14,10 @@ export default function yellowButton({
         type={type}
         onClick={onClick}
         className={
-          "text-white border-2 border-slate-50  text-[12px]  p-2 rounded-md w-full " + ((disabled==false) ? "hover:text-black hover:bg-white hover:border-2 hover:border-amber-400 bg-amber-500" : "bg-gray-300")
+          "text-white border-2 border-slate-50  text-[12px]  p-2 rounded-md w-full enabled:hover:text-black enabled:hover:bg-white enabled:hover:border-2 enabled:hover:border-amber-400 bg-amber-500 disabled:bg-gray-300  " 
+          // (disabled == false
+          //   ? "hover:text-black hover:bg-white hover:border-2 hover:border-amber-400 bg-amber-500"
+          //   : "bg-gray-300")
         }
       >
         {children}

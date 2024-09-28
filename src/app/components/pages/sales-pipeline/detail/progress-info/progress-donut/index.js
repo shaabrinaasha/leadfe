@@ -41,7 +41,7 @@ export default function progressDonut({ progress }) {
             r="13"
             fill="none"
             className="stroke-current text-gray-200 "
-            stroke-width="4"
+            strokeWidth="4"
           ></circle>
           {/* <!-- Progress Circle --> */}
           <circle
@@ -50,10 +50,10 @@ export default function progressDonut({ progress }) {
             r="13"
             fill="none"
             className="stroke-current text-amber-400"
-            stroke-width="4"
-            stroke-dasharray="100"
-            stroke-dashoffset={calcProgress(progress)}
-            stroke-linecap="round"
+            strokeWidth="4"
+            strokeDasharray="100"
+            strokeDashoffset={calcProgress(progress)}
+            strokeLinecap="round"
           ></circle>
         </svg>
 

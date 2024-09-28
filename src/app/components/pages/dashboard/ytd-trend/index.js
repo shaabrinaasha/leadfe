@@ -27,19 +27,23 @@ export default function yearToDateTrend({ data, budget }) {
   
   const [brokerage, setBrokerage] = useState([0]);
   const [consultation, setConsultation] = useState([0]);
+  const [endorsement, setEndorsement] = useState([0]);
   const [xLabels, setXLabels] = useState([""]);
 
   useEffect(() => {
     const brokArr = [];
     const consArr = [];
+    const endArr = []
     const labelArr = [];
     data.map((itr) => {
       brokArr.push(parseInt(itr.brokerage));
       consArr.push(parseInt(itr.consultation));
+      endArr.push(parseInt(itr.endorsement));
       labelArr.push(itr.title);
     });
     setBrokerage(brokArr);
     setConsultation(consArr);
+    setEndorsement(endArr)
     setXLabels(labelArr);
   }, []);
   // const test = data.total
@@ -47,10 +51,10 @@ export default function yearToDateTrend({ data, budget }) {
   return (
     <div className="bg-white lg:col-span-4  drop-shadow-xl rounded-lg p-5">
       <h2 className="text-[18px] font-bold text-sky-950">
-        Year-to-Date Estimation
+        Year-to-Date Result
       </h2>
       <h3 className="text-[15px] ">
-        year to date budget income based on active sales
+        year to date income result based on sales with win status
       </h3>
 
       <div className="w-full">
@@ -75,13 +79,21 @@ export default function yearToDateTrend({ data, budget }) {
                 label: "Brokerage Fee",
                 id: "brokerageId",
                 stack: "total",
-                color: "rgb(192 38 211)",
+                color: "rgb(14 165 233)",
                 valueFormatter: (value) => `IDR ${formatCount(value)}`,
               },
               {
                 data: consultation,
                 label: "Consultation Fee",
                 id: "consultationId",
+                stack: "total",
+                color: "rgb(20 184 166)",
+                valueFormatter: (value) => `IDR ${formatCount(value)}`,
+              },
+              {
+                data: endorsement,
+                label: "Endorsement Fee",
+                id: "endorsementId",
                 stack: "total",
                 color: "rgb(245 158 11)",
                 valueFormatter: (value) => `IDR ${formatCount(value)}`,
@@ -110,15 +122,21 @@ export default function yearToDateTrend({ data, budget }) {
             />
           </BarChart>
 
-          <div className="grid grid-cols-2">
+          <div className="grid md:grid-cols-3">
             <div className="flex items-center justify-center ">
-              <div className="w-[15px] h-[15px] bg-fuchsia-600 rounded-full "></div>
+              <div className="w-[15px] h-[15px] bg-sky-500 rounded-full "></div>
               <p className="text-[15px]  ml-2 font-medium  ">Brokerage Fee</p>
+            </div>
+            <div className="flex items-center justify-center ">
+              <div className="w-[15px] h-[15px] bg-teal-500 rounded-full "></div>
+              <p className="text-[15px]  ml-2 font-medium  ">
+                Consultation Fee
+              </p>
             </div>
             <div className="flex items-center justify-center ">
               <div className="w-[15px] h-[15px] bg-amber-500 rounded-full "></div>
               <p className="text-[15px]  ml-2 font-medium  ">
-                Consultation Fee
+                Endorsement Fee
               </p>
             </div>
           </div>

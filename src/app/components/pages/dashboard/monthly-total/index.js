@@ -27,7 +27,7 @@ export default function monthlyTotal({ data }) {
       totalPercent: totalPercent,
       brokeragePercent: brokeragePercent,
       budgetPercent:budgetPercent,
-      max: data.max,
+      max: formatCount(data.max,true),
     });
   }, []);
   // const test = data.total
@@ -36,13 +36,13 @@ export default function monthlyTotal({ data }) {
     <div className="bg-white col-span-3  drop-shadow-xl rounded-lg p-5">
       <h2 className="text-[18px] font-bold text-sky-950">Monthly Estimation</h2>
       <h3 className="text-[15px] ">
-        monthly budget income based on active sales
+        monthly income estimation based on ongoing sales
       </h3>
 
-      <div className="grid grid-cols-2 gap-2 divide-x my-3">
+      <div className="grid md:grid-cols-3  gap-2 divide-x my-3">
         {/* Brokerage fee */}
         <div>
-          <div className="flex items-center justify-center ">
+          <div className="flex flex-wrap items-center justify-center ">
             <div className="w-[15px] h-[15px] bg-sky-500 rounded-full "></div>
             <p className="text-[15px]  ml-2 font-medium  ">Brokerage Fee</p>
           </div>
@@ -53,13 +53,24 @@ export default function monthlyTotal({ data }) {
         </div>
         {/* consultation fee */}
         <div>
-          <div className="flex items-center justify-center ml-1">
+          <div className="flex flex-wrap  items-center justify-center ml-1">
             <div className="w-[15px] h-[15px] bg-amber-500 rounded-full "></div>
             <p className="text-[15px]  ml-2 font-medium">Consultation Fee</p>
           </div>
 
           <p className="text-[15px] font-bold items-center text-center">
             IDR {monthly.consultation}
+          </p>
+        </div>
+        {/* consultation fee */}
+        <div>
+          <div className="flex flex-wrap items-center justify-center ml-1">
+            <div className="w-[15px] h-[15px] bg-red-600 rounded-full "></div>
+            <p className="text-[15px]  ml-2 font-medium">Budget</p>
+          </div>
+
+          <p className="text-[15px] font-bold items-center text-center">
+            IDR {monthly.budget}
           </p>
         </div>
       </div>
@@ -90,8 +101,8 @@ export default function monthlyTotal({ data }) {
           <p className="text-[15px] font-regular">Total Estimated Income</p>
         </div>
         <div className="flex flex-col items-end">
-          <p className="text-[18px] font-semibold">IDR {monthly.budget}</p>
-          <p className="text-[15px] font-regular">Budget</p>
+          <p className="text-[18px] font-semibold">IDR {monthly.max}</p>
+          <p className="text-[15px] font-regular">Max Prospect</p>
         </div>
       </div>
     </div>

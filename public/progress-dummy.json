@@ -1,0 +1,60 @@
+{
+  "0": { "notes": "this is a note for 0" },
+  "5": { "notes": "this is a note for 5" },
+  "10": { "notes": null },
+  "20": { "notes": "this is a note for null" },
+  "40": {
+    "notes": null,
+    "file": {
+      "quotation_slip": { "fileID": "FL001", "path": "/filepath", "size": "3" },
+      "placing_slip": { "fileID": "FL001", "path": "/filepath", "size": "3" },
+      "other": null
+    }
+  },
+  "60": {
+    "notes": null,
+    "file": {
+      "quotation_slip_revision": {
+        "fileID": "FL001",
+        "path": "/filepath",
+        "size": "3"
+      },
+      "placing_slip_revision": {
+        "fileID": "FL001",
+        "path": "/filepath",
+        "size": "3"
+      },
+      "presentation": { "fileID": "FL001", "path": "/filepath", "size": "3" },
+      "other": { "fileID": "FL001", "path": "/filepath", "size": "3" }
+    }
+  },
+  "80": {
+    "notes": "this is a note for null",
+    "file": {
+      "bor_or_loa": {
+        "fileID": "FL001",
+        "path": "/filepath",
+        "size": "3"
+      },
+      "other": { "fileID": "FL001", "path": "/filepath", "size": "3" }
+    }
+  },
+  "100": {
+    "notes": "this is a note for null",
+    "file": {
+      "certificate": {
+        "fileID": "FL001",
+        "path": "/filepath",
+        "size": "3"
+      },
+      "cover_note": {
+        "fileID": "FL001",
+        "path": "/filepath",
+        "size": "3"
+      },
+      "policy": { "fileID": "FL001", "path": "/filepath", "size": "3" },
+      "invoice": { "fileID": "FL001", "path": "/filepath", "size": "3" },
+      "other": { "fileID": "FL001", "path": "/filepath", "size": "3" }
+    }
+  }
+}
